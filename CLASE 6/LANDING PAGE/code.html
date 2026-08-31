@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WinterSale - Liquidación Final</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#38485a",
+                        "primary": "#041627",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#802a00",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#1a2b3c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "secondary-container": "#cd4800",
+                        "primary-fixed-dim": "#b7c8de",
+                        "inverse-primary": "#b7c8de",
+                        "tertiary-fixed": "#d4e6eb",
+                        "on-primary-container": "#8192a7",
+                        "on-surface-variant": "#44474c",
+                        "secondary": "#a33800",
+                        "secondary-fixed": "#ffdbce",
+                        "on-secondary-container": "#fffbff",
+                        "outline": "#74777d",
+                        "on-tertiary-container": "#829498",
+                        "surface-tint": "#4f6073",
+                        "on-background": "#191c1e",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#1c2c30",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed": "#370e00",
+                        "outline-variant": "#c4c6cd",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed": "#0b1d2d",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary": "#07171b",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed": "#0d1e22",
+                        "tertiary-fixed-dim": "#b8cace",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#d2e4fb",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#39494e",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "price-tag": ["Plus Jakarta Sans"],
+                        "display-xl-mobile": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "price-tag": ["20px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                        "display-xl-mobile": ["40px", { "lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-primary/80 backdrop-blur-md shadow-sm">
+        <div
+            class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+            <div
+                class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-black tracking-tighter text-primary dark:text-primary-fixed">
+                WinterSale
+            </div>
+            <nav class="hidden md:flex gap-gutter items-center h-full">
+                <a class="text-secondary font-bold border-b-2 border-secondary pb-1 hover:text-secondary transition-colors duration-200"
+                    href="#">Shop All</a>
+                <a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors duration-200"
+                    href="#">Outerwear</a>
+                <a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors duration-200"
+                    href="#">Accessories</a>
+                <a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors duration-200"
+                    href="#">Sale</a>
+            </nav>
+            <div class="flex items-center gap-unit">
+                <button aria-label="Search"
+                    class="p-2 text-primary dark:text-on-primary hover:text-secondary transition-colors duration-200 active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button aria-label="shopping_cart"
+                    class="p-2 text-primary dark:text-on-primary hover:text-secondary transition-colors duration-200 active:scale-95 transition-transform relative">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span
+                        class="absolute top-1 right-0 bg-secondary text-on-secondary font-label-sm text-[10px] w-4 h-4 rounded-full flex items-center justify-center">3</span>
+                </button>
+                <button aria-label="person"
+                    class="p-2 text-primary dark:text-on-primary hover:text-secondary transition-colors duration-200 active:scale-95 transition-transform hidden md:block">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section
+            class="relative w-full min-h-[80vh] flex items-center justify-center bg-primary text-on-primary overflow-hidden px-margin-mobile md:px-margin-desktop">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-50 mix-blend-luminosity"
+                    data-alt="A striking digital fashion photography shot of models wearing high-end, heavily textured winter outerwear in a vast, minimalist studio space. The room is illuminated by high-key, cold white lighting that creates a bright, crisp modern aesthetic. The styling relies on a sophisticated palette of deep navy blacks and pristine snowy whites, punctuated by intense accents of vibrant safety orange on technical gear. The mood is powerful, urgent, and highly premium."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuByJM1gkM2TIsPxciS_NjiUkzM2x2B8dNr59s_uqif-MPs4DVW3NEhHUbICJo30Xfy11ayxQwqnpqlzPzrwSd9QbpzgAkSNifDD-G-jVqZHnxlF86iwyBLXocjHFgcxZonHOqHN3SB0yZMfbIVLguR5dgcIyX1G7L-paSLlCy8YSnnRCjQO_bBv14Vm26p3CMa7lnmFzgPLv5xciCOX1bC7xfE1h5hrRy3AfZoZnmPi_z6amLBEkAZ51Q" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent"></div>
+            </div>
+            <div
+                class="relative z-10 max-w-container-max w-full mx-auto flex flex-col items-start gap-[32px] md:w-2/3 lg:w-1/2 ml-0">
+                <div
+                    class="inline-block bg-secondary text-on-secondary font-label-sm text-label-sm uppercase px-[16px] py-[8px] rounded-DEFAULT shadow-[0_4px_12px_rgba(163,56,0,0.4)]">
+                    Liquidación Final de Temporada
+                </div>
+                <h1
+                    class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-display-xl text-on-primary max-w-2xl">
+                    HASTA <span class="text-secondary-fixed-dim">50% OFF</span> EN ROPA DE INVIERNO
+                </h1>
+                <p class="font-body-md text-body-md text-on-primary-fixed-variant max-w-xl text-[18px]">
+                    Equípate para el frío extremo con nuestra selección premium de abrigos, suéteres y accesorios
+                    térmicos. Cantidades limitadas, precios inigualables.
+                </p>
+                <button
+                    class="bg-on-primary text-primary font-headline-lg-mobile text-[16px] font-bold px-[32px] py-[16px] rounded-lg hover:bg-surface-variant hover:scale-[1.02] active:scale-95 transition-all duration-300 mt-unit flex items-center gap-unit shadow-[0_8px_24px_rgba(255,255,255,0.15)]">
+                    Comprar Ahora
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </button>
+            </div>
+        </section>
+        <!-- Trust Bar -->
+        <section class="bg-surface-container-low py-[24px] border-b border-surface-variant">
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div class="flex items-center gap-unit justify-center md:justify-start">
+                    <span class="material-symbols-outlined text-secondary text-[32px]">local_shipping</span>
+                    <div>
+                        <div class="font-bold text-primary">Envíos a todo el país</div>
+                        <div class="font-label-sm text-label-sm text-on-surface-variant">Rápido y seguro</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-unit justify-center md:justify-start">
+                    <span class="material-symbols-outlined text-secondary text-[32px]">sell</span>
+                    <div>
+                        <div class="font-bold text-primary">Descuentos Reales</div>
+                        <div class="font-label-sm text-label-sm text-on-surface-variant">Hasta 50% en seleccionados
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-unit justify-center md:justify-start">
+                    <span class="material-symbols-outlined text-secondary text-[32px]">payments</span>
+                    <div>
+                        <div class="font-bold text-primary">Medios de Pago</div>
+                        <div class="font-label-sm text-label-sm text-on-surface-variant">Visa, Mastercard, PayPal</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Promo Catalog Bento Grid -->
+        <section class="py-[80px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex justify-between items-end mb-[48px]">
+                <div>
+                    <h2
+                        class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">
+                        Ropa en Promoción</h2>
+                    <p class="text-on-surface-variant mt-unit">Últimas unidades disponibles.</p>
+                </div>
+                <a class="hidden md:flex items-center gap-unit font-bold text-primary hover:text-secondary transition-colors"
+                    href="#">
+                    Ver todo <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-2 md:grid-cols-12 gap-gutter md:grid-rows-[minmax(400px,auto)_minmax(400px,auto)]">
+                <!-- Large Feature Item -->
+                <article
+                    class="col-span-2 md:col-span-8 md:row-span-2 bg-surface-container-lowest rounded-xl overflow-hidden group relative flex flex-col md:flex-row shadow-[0_10px_40px_rgba(4,22,39,0.05)] border border-surface-variant">
+                    <div
+                        class="absolute top-4 right-4 z-10 bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT shadow-sm">
+                        -50%
+                    </div>
+                    <div
+                        class="absolute top-4 left-4 z-10 bg-error text-on-error font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[14px]">warning</span> Stock Bajo
+                    </div>
+                    <div class="w-full md:w-3/5 h-64 md:h-full relative overflow-hidden bg-surface-container-low">
+                        <img class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                            data-alt="A striking product photography shot of a heavy-duty, technical winter parka floating weightlessly in a vast, minimalist studio space. The room is illuminated by high-key, cold white lighting that highlights the jacket's matte texture and premium hardware. The styling relies on a sophisticated palette of deep navy blacks and pristine snowy whites, punctuated by intense accents of vibrant safety orange on the zippers and lining. The mood is highly technical and premium."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Gj75AZgMIRnmiNDrybwo8Mu_JYjq7v0w5nWYSaLYlzVq7MY4kaQZl9NvMbBMVS9io46qLe775KNeZvr4tFOGpBowHKwh4gIf3EzzylV65UjOUN87QpZctaOKrwD1xppJ71N-ZsUE_EIsYsMueKs4epOql3jJdIY5ZIJ9EnH5IezbJrx7FCb3c0DL2ubOCfzvsrMRkXMRxxqkyGd9MsGkK2iTPYFUjfVMcEHgGG8FP80s0rD4le_SUA" />
+                    </div>
+                    <div class="w-full md:w-2/5 p-[32px] flex flex-col justify-center">
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Parka Térmica
+                            Pro-X</h3>
+                        <p class="text-on-surface-variant mb-[24px]">Resistencia extrema al viento y agua. Aislamiento
+                            sintético de alta densidad.</p>
+                        <div class="flex items-baseline gap-unit mb-[24px]">
+                            <span class="font-price-tag text-price-tag text-secondary text-[32px]">$129.99</span>
+                            <span
+                                class="font-body-md text-body-md text-on-primary-container line-through">$259.99</span>
+                        </div>
+                        <div class="mb-[32px]">
+                            <div class="font-label-sm text-label-sm text-on-surface-variant mb-2">TALLAS DISPONIBLES
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center font-bold text-on-surface hover:border-primary hover:bg-primary hover:text-on-primary transition-colors cursor-pointer">S</button>
+                                <button
+                                    class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center font-bold text-on-surface hover:border-primary hover:bg-primary hover:text-on-primary transition-colors cursor-pointer">M</button>
+                                <button
+                                    class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center font-bold text-surface-dim bg-surface-variant cursor-not-allowed line-through"
+                                    disabled="">L</button>
+                                <button
+                                    class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center font-bold text-surface-dim bg-surface-variant cursor-not-allowed line-through"
+                                    disabled="">XL</button>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg hover:bg-primary-container active:scale-95 transition-all shadow-[0_4px_12px_rgba(4,22,39,0.2)]">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+                <!-- Small Grid Items -->
+                <article
+                    class="col-span-1 md:col-span-4 bg-surface-container-lowest rounded-xl overflow-hidden group relative flex flex-col shadow-[0_8px_24px_rgba(4,22,39,0.04)] border border-surface-variant">
+                    <div
+                        class="absolute top-3 right-3 z-10 bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT">
+                        -30%
+                    </div>
+                    <div class="h-48 md:h-[220px] relative overflow-hidden bg-surface-container-low w-full">
+                        <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A highly detailed product photography shot of a thick, luxurious merino wool sweater folded neatly on a pristine white surface. High-key, cold white lighting casts soft shadows, highlighting the complex knit texture. The palette is strictly neutral with shades of slate gray and ice white, communicating a minimalist, premium brand identity."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH9a_-a7wQI4zBpQ-FkJXuAo0Lftx0hg75k7vKvxe4nYykMPwQnY9nlD07fG-aCYAEPSc2h5O9_m1Fq_oMqripOiQye5maYFwnQaWRBnqXq7sEoKZ1HcE4a6u-ayjvSdLiNSVBDU9twT7sBLLAwhXUeHzwyjsH6UEiaWf5_pTgjn7h6wcecnc0BFK3I1EhH6n1KBjHo_eOntXczwVEuYoj8kkkb5Eic5QIpQwaoZpnurqM__LLjYX9Rg" />
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-primary text-[18px] leading-tight mb-1">Suéter Lana Merino</h3>
+                        <div class="flex items-baseline gap-2 mb-3 mt-auto pt-2">
+                            <span class="font-price-tag text-price-tag text-secondary text-[20px]">$89.99</span>
+                            <span
+                                class="font-body-md text-body-md text-on-primary-container text-[14px] line-through">$129.99</span>
+                        </div>
+                        <div class="flex gap-1 mb-4 opacity-70">
+                            <span
+                                class="text-[10px] font-label-sm border border-outline-variant px-1.5 py-0.5 rounded-sm">S</span>
+                            <span
+                                class="text-[10px] font-label-sm border border-outline-variant px-1.5 py-0.5 rounded-sm">M</span>
+                            <span
+                                class="text-[10px] font-label-sm border border-outline-variant px-1.5 py-0.5 rounded-sm">L</span>
+                        </div>
+                        <button
+                            class="w-full border-2 border-primary text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors text-[14px]">
+                            Comprar
+                        </button>
+                    </div>
+                </article>
+                <article
+                    class="col-span-1 md:col-span-4 bg-surface-container-lowest rounded-xl overflow-hidden group relative flex flex-col shadow-[0_8px_24px_rgba(4,22,39,0.04)] border border-surface-variant">
+                    <div
+                        class="absolute top-3 right-3 z-10 bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT">
+                        -40%
+                    </div>
+                    <div
+                        class="absolute top-3 left-3 z-10 bg-error text-on-error font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT flex items-center gap-1 scale-90 origin-top-left">
+                        <span class="material-symbols-outlined text-[12px]">warning</span> Último
+                    </div>
+                    <div class="h-48 md:h-[220px] relative overflow-hidden bg-surface-container-low w-full">
+                        <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A striking digital product photography shot of sleek, high-tech winter boots resting on a subtle slab of polished ice. The room is illuminated by high-key, cold white lighting that creates sharp, modern reflections. The styling relies on a sophisticated palette of deep navy blacks and matte greys, accented by small vibrant orange structural details. The mood is rugged yet luxurious."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGXIcePT5sJeVw8cIs8djl2ih7WEsX2Jst43w-ENbdA31VqL0CWhwFGCpsuAFl49BKPWsQtlklW_HWsWJxVFavQ4MFlb6KW64Zh-yU-Tve9twq6qNsOLUPKlBdlFJt7dV8McnrOoOw1n9uYKy7RS_Fp6E49GeFKSeMiA8kNaFZZi5FvEISGJGdkhClNL7-lsYCv6bvigHdPBtWxwoSSZcvbyJ70cqQZZM575KpspMbOi7RdbAIeHVd2A" />
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-primary text-[18px] leading-tight mb-1">Botas Nieve Alpine</h3>
+                        <div class="flex items-baseline gap-2 mb-3 mt-auto pt-2">
+                            <span class="font-price-tag text-price-tag text-secondary text-[20px]">$149.99</span>
+                            <span
+                                class="font-body-md text-body-md text-on-primary-container text-[14px] line-through">$249.99</span>
+                        </div>
+                        <div class="flex gap-1 mb-4 opacity-70">
+                            <span
+                                class="text-[10px] font-label-sm border border-outline-variant px-1.5 py-0.5 rounded-sm">41</span>
+                            <span
+                                class="text-[10px] font-label-sm border border-outline-variant px-1.5 py-0.5 rounded-sm">42</span>
+                        </div>
+                        <button
+                            class="w-full border-2 border-primary text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors text-[14px]">
+                            Comprar
+                        </button>
+                    </div>
+                </article>
+            </div>
+            <div class="md:hidden mt-8 text-center w-full">
+                <button
+                    class="w-full border-2 border-outline text-primary font-bold py-3 rounded-lg hover:bg-surface-variant transition-colors">
+                    Ver todo el catálogo
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Component Generated from JSON -->
+    <footer class="w-full py-16 bg-primary dark:bg-tertiary-container text-on-primary">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <!-- Brand Column -->
+            <div class="col-span-1 md:col-span-1 flex flex-col gap-unit">
+                <div class="font-headline-lg text-headline-lg font-bold text-secondary">
+                    WinterSale
+                </div>
+                <p class="text-on-primary-fixed-variant mt-2 text-[14px]">
+                    Liquidación de invierno premium. La mejor calidad para el frío extremo.
+                </p>
+                <div class="flex gap-4 mt-4">
+                    <a aria-label="Instagram"
+                        class="w-10 h-10 bg-on-primary flex items-center justify-center rounded-DEFAULT hover:opacity-80 transition-opacity"
+                        href="#">
+                        <span class="material-symbols-outlined text-primary">photo_camera</span>
+                    </a>
+                    <a aria-label="Facebook"
+                        class="w-10 h-10 bg-on-primary flex items-center justify-center rounded-DEFAULT hover:opacity-80 transition-opacity"
+                        href="#">
+                        <span class="material-symbols-outlined text-primary">thumb_up</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Links -->
+            <div class="col-span-1 md:col-span-2 grid grid-cols-2 gap-gutter mt-8 md:mt-0">
+                <div class="flex flex-col gap-3">
+                    <h4 class="font-bold mb-2">Legal</h4>
+                    <a class="text-on-primary-fixed-variant hover:text-on-secondary-fixed transition-colors text-[14px]"
+                        href="#">Privacy Policy</a>
+                    <a class="text-on-primary-fixed-variant hover:text-on-secondary-fixed transition-colors text-[14px]"
+                        href="#">Terms of Service</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h4 class="font-bold mb-2">Soporte</h4>
+                    <a class="text-on-primary-fixed-variant hover:text-on-secondary-fixed transition-colors text-[14px]"
+                        href="#">Shipping Info</a>
+                    <a class="text-on-primary-fixed-variant hover:text-on-secondary-fixed transition-colors text-[14px]"
+                        href="#">Returns</a>
+                    <a class="text-on-primary-fixed-variant hover:text-on-secondary-fixed transition-colors text-[14px]"
+                        href="#">Contact Us</a>
+                </div>
+            </div>
+            <!-- Contact -->
+            <div class="col-span-1 md:col-span-1 flex flex-col gap-3 mt-8 md:mt-0">
+                <h4 class="font-bold mb-2">Contacto</h4>
+                <div class="flex items-start gap-2 text-on-primary-fixed-variant text-[14px]">
+                    <span class="material-symbols-outlined text-[18px]">location_on</span>
+                    <span>Av. los Alpes 1234, Ciudad Fría, CF 90210</span>
+                </div>
+                <div class="flex items-center gap-2 text-on-primary-fixed-variant text-[14px]">
+                    <span class="material-symbols-outlined text-[18px]">call</span>
+                    <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="flex items-center gap-2 text-on-primary-fixed-variant text-[14px]">
+                    <span class="material-symbols-outlined text-[18px]">mail</span>
+                    <span>soporte@wintersale.com</span>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mt-16 pt-8 border-t border-primary-container px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center text-on-primary-fixed-variant text-[12px]">
+            © 2024 WinterSale Precision Frost. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
