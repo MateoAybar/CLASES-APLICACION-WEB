@@ -1,0 +1,49 @@
+/* selector universal */
+*{
+    
+}
+
+body 
+{
+    background-color:antiquewhite
+
+}
+header{
+    background-color: antiquewhite;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+/* SELECTORES DE CLASE */
+ 
+
+
+
+.encabezado-principal .vinculos a{
+background-color: burlywood;
+}
+
+.contenido-principal{
+    background-color: antiquewhite;
+
+}
+
+.pie-principal{
+    background-color: burlywood;
+}
+
+/* SELECTOR ID */
+/* #contacto{
+    background-color: blueviolet;
+} */
+
+[class]{
+
+}
+
+
+
+
+
