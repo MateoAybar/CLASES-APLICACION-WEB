@@ -1,0 +1,3 @@
+DOS TIPOS DE EEMENTOS CSS;
+-De bloque; se expande hasta ocupar todo el espacio que pueda
+-De linea; se ubica uno al lado del otro, cuando llega al final se va para abajo

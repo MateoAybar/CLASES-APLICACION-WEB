@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+/* --------------------------- */
+html, body h1, h2, h3, ul{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+
+    background-color: bisque;
+}
+a{
+    text-decoration: none;
+    color: #420505;
+}
+/* --------------------------- */
+.cabecera-principal{
+    background-color: antiquewhite;
+    padding: 5px 10px 20px 10px;
+    border-bottom: 2px solid #222;
+
+}
+.cabecera-principal nav{
+    background-color: #0000;
+
+}
+ /* ------------------------ */
+.contenido-principal {
+    background-color: aliceblue;
+    padding: 10px 20px;
+}
+.contenido-principal form input{
+    display: block;
+    width: 100%;
+}
+/* -------------------------------- */
+.pie-principal{
+    background-color: aliceblue;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+}
